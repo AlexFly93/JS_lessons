@@ -16,9 +16,9 @@ function calculate(action, num1, num2) {
   }
 }
 
-let action = "вычесть";
-let num1 = 5;
-let num2 = 3;
+const action = "вычесть";
+const num1 = 5;
+const num2 = 3;
 
-let result = calculate(action, num1, num2);
-console.log(result);
+const result = calculate(action, num1, num2);
+console.log(`action: ${action}\nfirst number: ${num1}\nsecond number: ${num2}\nresult: ${result}`);

@@ -1,3 +1,5 @@
+import {question} from 'readline-sync';
+
 //1. Задача: Конвертер валют
 
 //Задание: Напишите функцию convertCurrency, принимающую сумму в долларах США (USD) и код валюты, в которую нужно конвертировать ('EUR', 'UAH', 'GBP'). Функция должна возвращать сумму в указанной валюте, используя фиксированные курсы валют (например, 1 USD = 0.9 EUR, 1 USD = 35 UAH, 1 USD = 0.8 GBP). Если код валюты не поддерживается, функция должна возвращать строку с ошибкой.
@@ -13,4 +15,9 @@ function convertCurrency(amountUSD, currencyCode) {
       return "Ошибка: Код валюты не поддерживается";
   }
 }
-console.log(convertCurrency(100,'GBP'))
+
+const userInt = +question('Enter your amount in USD:\n')
+const currencyCode = question('Currency you wish to convert to:\n')
+console.log(convertCurrency(userInt,currencyCode))
+console.log(typeof(userInt));
+console.log(typeof(currencyCode));

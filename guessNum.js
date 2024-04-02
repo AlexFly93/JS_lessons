@@ -6,16 +6,11 @@ import { question } from "readline-sync";
 //Совет: Если пользователь вводит число, которое не совпадает с заданным, но остались попытки, функция подсказывает: "слишком большое" или "слишком малое".
 //Валидация ввода: Убедитесь, что пользователь ввел действительное число в нужном диапазоне (от 1 до 10). Если введенное значение недействительно, просьба ввести число снова не считая это как попытку.
 
-let randomNumber = Math.ceil(Math.random() * 10) + 1;
-function guessNumber(triesLeft) {
+let randomNumber = Math.floor(Math.random() * 10) + 1;
+function guessNumber(triesLeft = 3) {
   let userInput = +question("Enter you number:\n");
 
-  if (
-    userInput !== null &&
-    !isNaN(userInput) &&
-    userInput >= 1 &&
-    userInput <= 10
-  ) {
+  if (userInput >= 1 && userInput <= 10) {
     if (userInput === randomNumber) {
       console.log("Lucky bastard!");
     } else {
@@ -32,4 +27,4 @@ function guessNumber(triesLeft) {
   }
 }
 
-guessNumber(3);
+guessNumber();
